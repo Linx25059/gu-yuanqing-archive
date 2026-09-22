@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>《校勘記：未寄出的第十二首十四行詩》— 數位文獻展廳</title>
+  <meta name="description" content="國家文學資料館《校勘記：未寄出的第十二首十四行詩》數位展廳與文獻考據工作台。">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="archive-wrapper">
+    
+    <!-- Outer Archival Double Frame -->
+    <div class="archival-frame">
+      
+      <!-- Header Bar -->
+      <header class="archive-header">
+        <div class="header-top-bar">
+          <div>NATIONAL LITERARY ARCHIVES・DIGITAL CURATION</div>
+          <div class="archive-ref-code">Doc. Ref. NLA-1948-GYQ-012-RESTRICTED</div>
+        </div>
+
+        <h1 class="archive-title">校勘記：未寄出的第十二首十四行詩</h1>
+        <div class="archive-subtitle">Collation Notes: The Unsent Twelfth Sonnet by Gu Yuanqing (1913–1952)</div>
+
+        <!-- Embossed Red Archival Stamp -->
+        <div class="vermilion-stamp">
+          國立文獻<br>資料館<br>特別典藏
+        </div>
+      </header>
+
+      <!-- Navigation Tabs -->
+      <nav class="archive-nav" role="tablist">
+        <button class="nav-tab active" data-tab="tab-archive" role="tab">🏛️ 文獻展廳與校對鏡</button>
+        <button class="nav-tab" data-tab="tab-documents" role="tab">📜 往來書信與審查報告</button>
+        <button class="nav-tab" data-tab="tab-debate" role="tab">⚖️ 學術雙重考據</button>
+        <button class="nav-tab" data-tab="tab-desk" role="tab">🧩 十四行詩重構工作台</button>
+      </nav>
+
+      <!-- TAB 1: Poetry Archive & Diff View -->
+      <div id="tab-archive" class="tab-panel active">
+        
+        <div class="section-title">
+          <span>詩文校勘與雙層校對鏡 (Textual Collation Diff View)</span>
+          <span style="font-size: 0.85rem; font-weight: normal; color: var(--text-pencil);">版本對照與手稿塗改痕跡比對</span>
+        </div>
+
+        <!-- Version Switcher Bar -->
+        <div class="version-toggle-bar">
+          <span style="font-weight: 700; color: var(--text-ink-primary);">檢視版本：</span>
+          <button id="btn-print-ver" class="toggle-btn active" onclick="switchVersion('print')">📜 1949 年排印定稿 (Printed Text)</button>
+          <button id="btn-draft-ver" class="toggle-btn" onclick="switchVersion('draft')">✒️ 1947 年手稿遺墨 (Manuscript Draft)</button>
+          <span style="margin-left: auto; font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-vermilion);">
+            <span id="version-status-tag">目前：1949 晨光初印本</span>
+          </span>
+        </div>
+
+        <!-- Sonnet Collation Layout (Poetry Left, Marginalia Right) -->
+        <div class="sonnet-collation-grid">
+          
+          <!-- Sonnet Paper Area -->
+          <div class="sonnet-paper">
+            <div class="sonnet-header-meta">
+              <span>NLA-1948-GYQ-S07</span> | <span>PETRARCHAN SONNET #7</span>
+            </div>
+
+            <h2 class="sonnet-title">《十二月的回聲》：第七首〈七月之霧〉</h2>
+
+            <!-- Stanza 1 (Quatrain 1) -->
+            <div class="sonnet-stanza">
+              <div class="sonnet-line">冷潮從江面悄然蔓延過城霧，<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(A)</span></div>
+              <div class="sonnet-line" id="line-2-content">街燈在濕潤的夜色中微燈。<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(B)</span></div>
+              <div class="sonnet-line">你留下的誓言在水氣中凝，<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(B)</span></div>
+              <div class="sonnet-line">遮蔽了所有歸人的斜陽暮。<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(A)</span></div>
+            </div>
+
+            <!-- Stanza 2 (Quatrain 2 - Rhyme Break!) -->
+            <div class="sonnet-stanza">
+              <div class="sonnet-line">荒舟在無人的舊碼頭停渡，<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(A)</span></div>
+              <div class="sonnet-line">我們曾以為記憶堅如寒冰。<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(B)</span></div>
+              <div class="sonnet-line">歲月縱使不再發出迴響冰，<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(B)</span></div>
+              <div class="sonnet-line" id="line-8-content">
+                這座城終究只留下一道<span class="rhyme-break-target" id="rhyme-target" onmouseover="highlightMarginalia('m-rhyme')" onmouseout="unhighlightMarginalia('m-rhyme')">燼</span>。<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:var(--color-vermilion); font-weight:bold;">(C)</span>
+              </div>
+            </div>
+
+            <!-- Stanza 3 (Tercet 1) -->
+            <div class="sonnet-stanza">
+              <div class="sonnet-line">若你聽見鐘聲在遠山低迴，<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(D)</span></div>
+              <div class="sonnet-line">那是時光在荒原上的折返。<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(E)</span></div>
+              <div class="sonnet-line">未寫完的書信已被風吹散，<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(E)</span></div>
+            </div>
+
+            <!-- Stanza 4 (Tercet 2) -->
+            <div class="sonnet-stanza">
+              <div class="sonnet-line">誰在幽暗的書房獨自舉杯？<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(D)</span></div>
+              <div class="sonnet-line">等待大雪徹底封鎖了門檻，<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(E)</span></div>
+              <div class="sonnet-line">這場大火終將燃盡最後的愧。<span style="float:right; font-family:var(--font-mono); font-size:0.75rem; color:#999;">(D)</span></div>
+            </div>
+
+          </div>
+
+          <!-- Marginalia Panel (Pencil Notes) -->
+          <div class="marginalia-panel">
+            <div class="marginalia-card" id="m-rhyme">
+              <div class="marginalia-title">✍️ 助理研究員「林」校勘便箋 §7.8</div>
+              <div class="marginalia-content">
+                「第 8 行末字『燼』強行偏離遇韻（應押平水韻遇韻，如『路』）。手稿 Ms-A 原寫為『遮蔽來時<strong style="color:var(--color-vermilion)">路</strong>』。詩人親筆塗改，並留符號指向備忘錄。被替換的『路』字即為未寄出的第十二首詩 Q2 第 7 行之結尾。」
+              </div>
+            </div>
+
+            <div class="marginalia-card">
+              <div class="marginalia-title">📜 文獻檔案館編者備忘</div>
+              <div class="marginalia-content">
+                「1949 年晨光初版印行時，排印員曾試圖將『燼』還原為『路』，但顧淵青在校樣上明確寫下：『不可改。此處非錯字，乃灰燼之留痕。』」
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- TAB 2: Letters & Censorship Records -->
+      <div id="tab-documents" class="tab-panel">
+        <div class="section-title">
+          <span>歷史文獻與出版審查報告 (Historic Letters & Censorship)</span>
+        </div>
+
+        <p style="margin-bottom: 1.5rem; color: var(--text-ink-secondary);">
+          1948 年底，顧淵青隱居山城期間與友人白牧的往來書信被收錄於國家文獻檔案庫。以下為經紫外螢光還原之書信與 1949 年晨光初版審查報告。
+        </p>
+
+        <!-- Redacted Ink Secret Reveal Box -->
+        <div class="redacted-box">
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-vermilion); margin-bottom: 0.5rem; font-weight: bold;">
+            🔒 審查機密塗抹條目（NLA-CENSOR-RESTRICTED）
+          </div>
+          <div class="redacted-secret-text">
+            ［機密審查筆記 §1949-042］：被刪除之第十二首十四行詩碎片已分別藏匿於：
+            1. 四行節 Q1 (Line 1~4)：`manuscripts/variants/spring_sonnets_collation.md`
+            2. 四行節 Q2 (Line 5~8)：`letters/letter_1947_11.md`, `letter_1948_05.md`, `letter_1948_12.md`
+            3. 三行節 T1 (Line 9~11)：`censorship/1949_publisher_report.md`
+            4. 三行節 T2 (Line 12~14)：`critical_apparatus/lin_diary_sealed.md` (Raw View)
+          </div>
+        </div>
+
+        <!-- Letters Cards -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+          <div style="background: #ffffff; border: 1px solid var(--color-border-light); padding: 1.5rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-pencil);">NLA-CORR-1947-GYQ-001</div>
+            <h3 style="font-size: 1.15rem; margin: 0.4rem 0 0.8rem 0;">顧淵青致白牧（1947年11月14日）</h3>
+            <p style="font-size: 0.95rem; font-style: italic; color: var(--text-ink-secondary); line-height: 1.7;">
+              「……整理這半年來寫給你的草稿，才發現<strong style="color:var(--text-ink-primary); border-bottom: 1px dashed var(--color-vermilion);">那些書信終究沒能寄跨過滔滔的江流</strong>。字紙堆在案頭，只能<strong style="color:var(--text-ink-primary); border-bottom: 1px dashed var(--color-vermilion);">任憑時光在無聲的歲月裡獨自沉淪</strong>……」
+            </p>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid var(--color-border-light); padding: 1.5rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-pencil);">NLA-CENSOR-1949-CG-042</div>
+            <h3 style="font-size: 1.15rem; margin: 0.4rem 0 0.8rem 0;">1949 年晨光初版審查刪除報告</h3>
+            <p style="font-size: 0.95rem; font-style: italic; color: var(--text-ink-secondary); line-height: 1.7;">
+              「刪除條目 §C-12.1：『<strong style="color:var(--text-ink-primary);">致白牧：請原諒我選擇了極致的沉默</strong>』<br>
+               刪除條目 §C-12.2：『<strong style="color:var(--text-ink-primary);">當你在那個飄雪的清晨默默轉身</strong>』<br>
+               刪除條目 §C-12.3：『<strong style="color:var(--text-ink-primary);">我們曾共同立下的誓言早已散入風中</strong>』」
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TAB 3: Shen vs Lin Debate -->
+      <div id="tab-debate" class="tab-panel">
+        <div class="section-title">
+          <span>學術雙重考據：偽作說 vs. 真跡考據 (Academic Conflict)</span>
+        </div>
+
+        <div class="debate-container">
+          
+          <!-- Shen Card -->
+          <div class="debate-card shen">
+            <div class="debate-author" style="color: #4a5568;">沈兼士 教授（計畫主持）</div>
+            <div class="debate-role">主張：第十二首詩已銷毀 / 後人偽託說</div>
+            <p style="font-size: 0.93rem; line-height: 1.7; color: var(--text-ink-secondary);">
+              「顧淵青於 1948 年 12 月 31 日深夜已將第十二首詩親手投爐燒毀。詩人留下的便條『第十二個月不需要語言』已明確否定其文字存在。林助理所謂的『異文密碼』純屬巧合，將草稿塗改強行拼湊為十四行詩違背文獻學嚴謹性。」
+            </p>
+          </div>
+
+          <!-- Lin Card -->
+          <div class="debate-card lin">
+            <div class="debate-author" style="color: var(--color-vermilion);">林哲遠 助理研究員</div>
+            <div class="debate-role">主張：遍歷文學真跡 / 14 行碎片考據</div>
+            <p style="font-size: 0.93rem; line-height: 1.7; color: var(--text-ink-secondary);">
+              「本團隊利用高解析度光學透射檢驗與拉曼光譜分析，證實手稿底紙均含有 1948 年蜀山竹紙廠水紋星芒浮水印。塗改墨跡光譜峰值與正文鐵膽墨水（1320 cm⁻¹）完全一致。詩人並未毀詩，而是將 14 行詩句拆散掩埋於四處文獻中。」
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 4: The Collation Desk (十四行詩重構工作台) -->
+      <div id="tab-desk" class="tab-panel">
+        
+        <div class="section-title">
+          <span>十四行詩散失重構工作台 (The Collation Workbench)</span>
+        </div>
+
+        <div class="collation-desk-container">
+          
+          <div class="desk-header">
+            <div>
+              <div class="desk-title">📜 散失手稿重構木案 (Reconstruction Desk)</div>
+              <div class="desk-instructions">請將散落之 14 行詩句紙條安放於對應格律插槽 (Slot I ~ XIV)。</div>
+            </div>
+            <div>
+              <button class="verify-btn" onclick="verifyCollation()">進行驗證 (Verify)</button>
+              <button class="reset-btn" onclick="resetDesk()">重置案几 (Reset)</button>
+            </div>
+          </div>
+
+          <!-- Slots Grid (I to XIV) -->
+          <div class="slots-grid" id="slots-container">
+            <!-- Dynamically populated by app.js -->
+          </div>
+
+          <!-- Scattered Paper Slips Pool -->
+          <div class="slips-pool-title">📌 散落於手稿異文、書信與審查報告之 14 行碎片</div>
+          <div class="slips-pool" id="slips-container">
+            <!-- Dynamically populated by app.js -->
+          </div>
+
+          <!-- Verification Result Banner -->
+          <div class="completion-banner" id="completion-banner">
+            <div class="completion-stamp">校勘合龍<br>全輯存檔</div>
+            <h3 style="font-size: 1.4rem; color: var(--color-vermilion); margin-bottom: 0.75rem;">
+              🎉 考據合龍：〈第十二首：嚴冬紀事〉重構成功！
+            </h3>
+            <p style="line-height: 1.8; color: var(--text-ink-primary); margin-bottom: 1.25rem;">
+              大雪落盡，文字歸位。已依據佩脫拉克商籟體格律（ABBA ABBA CDE CDE）還原顧淵青未寄出的第十二首十四行詩。
+            </p>
+            <div style="background: #ffffff; border: 1px solid var(--color-border-light); padding: 1.25rem; margin-bottom: 1.25rem; font-style: italic;">
+              「致白牧：當你在那個飄雪的清晨默默轉身，萬物都將在無言的大雪中獲得歸位。」
+            </div>
+            <a href="docs/exhibition/chronicles-of-severe-winter.md" target="_blank" class="repo-link-btn" style="background: var(--color-vermilion); color: #fff; border: none;">
+              📖 前往展廳閱讀【未公開展覽與完整獨白】 (chronicles-of-severe-winter.md) →
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Academic Gateway Footer -->
+      <footer class="archive-footer">
+        <p>
+          本展覽依據 1948 年手稿墨跡本與 1949 年晨光初版原始檔案數位化製作。
+        </p>
+        <p style="margin-top: 0.4rem; font-size: 0.82rem;">
+          所有異文對照、歷史書信全文及未刊殘稿目錄，已同步典藏於 Git 數位倉儲。
+        </p>
+        <a href="README.md" class="repo-link-btn">
+          📂 存取 Git 典藏庫原始碼 (GitHub Repository)
+        </a>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
